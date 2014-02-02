@@ -1,0 +1,7 @@
+DB_NAME = "DBNAME"
+DB_HOST = "HOSTIP"
+DB_PORT = "PORT"
+USERNAME = "UNAME"
+PASSWORD = "PASSWORD" 
+
+UPLOAD_FOLDER = "app/static/images" 

@@ -1,0 +1,99 @@
+<!DOCTYPE HTML> 
+<html> 
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <title>Gallery</title>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/gallery.css')}}"/>
+        <link rel="stylesheet" href="{{url_for('static', filename='css/shadows.css')}}"/>
+	<link rel="stylesheet" href="{{url_for('static', filename='css/buttons.css')}}"/>
+	<script src="{{url_for('static', filename='js/lib/jquery-1.8.2.min.js')}}"></script>
+	<script src="{{url_for('static', filename='js/lib/jsonp.js')}}"></script>
+
+                
+         <script id="indexTmpl" type="text/x-jquery-tmpl">
+	  	<div class="item-detail">	
+            	<div class="item-image drop-shadow round">
+                     <img src="${image_url}"/></a>
+                	<div class="item-about">${about}</div>
+                	<div class="item-address">${addr}</div>
+                </div>
+         </div>
+         </script>
+
+		<script id="uploadTmpl" type="text">
+		<div class="upload">
+		 <form enctype="multipart/form-data">
+    		<label>
+      	        Choose Image	
+    		</label>
+      		<input name="file" class="file" type="file" />
+    		<br>
+    		<br>
+    		<label>
+		       About Image 
+      			<textarea name="name" type="text" />
+    		</label>
+    		<br>
+    		<br>
+		<label>
+			Where was the image taken? &#40;Address Please&#41;
+			<input name="address" type="text"/>
+		</label>
+    		<br>
+    		<br>
+    		<input type="submit" value="Upload">
+		</form>	
+		</div>
+		</script>
+		
+		<script id="searchTmpl" type="text">
+		 <div class="SearchForm" id="search">    
+			<form>
+				<input name="address" placeholder="Address" class="field" />
+				<label class="custom-select">
+				Select in Miles
+				<select name="miles">
+    					<option>10</option>
+					<option>100</option>
+					<option>1000</option>
+					<option>10000</option>
+				</select>
+				<br>
+				<br>
+				<button class="submit" type="submit">Search</button>
+			</form>
+		</div> 
+
+		</script>
+    </head>
+    <body>
+            <header id="header">
+		<div class="Links">
+                      <h1>
+	          	<div class="heading">
+                    	 <a href="index.html">Gallery</a>
+		    	 <a href="index.html#upload"><img src="../static/icons/upload.png" width="50px"></a> 
+	          	</div>
+                      </h1>
+		</div>
+		<div class="Search">
+                      <h3>
+                    	 <a href="index.html#search">Search Images</a>
+                      </h3>
+		</div>
+            </header>
+        <div id="container">
+	    <div id="main">
+	    </div>
+
+        </div>
+
+	<script src="{{url_for('static', filename='js/lib/jquery.tmpl.min.js')}}"></script>
+	<script src="{{url_for('static', filename='js/lib/underscore-min.js')}}"></script>
+	<script src="{{url_for('static', filename='js/lib/backbone-min.js')}}"></script>
+	<script src="{{url_for('static', filename='js/gallery.js')}}"></script>
+
+
+    </body>
+</html>
